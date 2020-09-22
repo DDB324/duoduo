@@ -3,8 +3,10 @@ import VueRouter, { RouteConfig } from 'vue-router'
 import Statistics from '@/views/Statistics.vue';
 import Chart from '@/views/Chart.vue';
 import Money from '@/views/Money.vue';
+import Nav from '@/components/Nav.vue';
 
 Vue.use(VueRouter)
+Vue.component('Nav',Nav)
 
 const routes: Array<RouteConfig> = [
   {
