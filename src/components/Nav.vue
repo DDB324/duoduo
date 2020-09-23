@@ -28,6 +28,14 @@ export default class Nav extends Vue {
 </script>
 
 <style lang='scss' scoped>
+@import "~@/assets/style/helper.scss";
+%item{
+  padding-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
 nav {
   display: flex;
   font-size: 12px;
@@ -36,12 +44,8 @@ nav {
   flex-direction: row;
 
   .item {
-    padding-bottom: 5px;
+    @extend %item;
     width: 35%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
 
     ::v-deep.icon {
       width: 40px;
@@ -50,24 +54,20 @@ nav {
   }
 
   .item-add {
+    @extend %item;
     padding-top: 5px;
-    padding-bottom: 5px;
     width: 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
 
     ::v-deep.icon {
       width: 70px;
       height: 70px;
-      fill: #ffdb2d;
+      fill: $color-height;
     }
   }
 
   .item.selected {
     ::v-deep.icon {
-      background: #ffdb2d;
+      background: $color-height;
     }
   }
 }
