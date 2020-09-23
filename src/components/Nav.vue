@@ -30,7 +30,7 @@ export default class Nav extends Vue {
 <style lang='scss' scoped>
 @import "~@/assets/style/helper.scss";
 %item{
-  padding-bottom: 5px;
+  padding-bottom: 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,19 +48,17 @@ nav {
     width: 35%;
 
     ::v-deep.icon {
-      width: 40px;
-      height: 40px;
+      font-size: 40px;
     }
   }
 
   .item-add {
     @extend %item;
-    padding-top: 5px;
+    padding-top: 4px;
     width: 30%;
 
     ::v-deep.icon {
-      width: 70px;
-      height: 70px;
+      font-size: 70px;
       fill: $color-height;
     }
   }
