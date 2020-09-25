@@ -1,8 +1,12 @@
 <template>
-  <ul class="tabs" >
+  <ul class="tabs">
     <li></li>
-    <li class="selected" >支出</li>
-    <li>收入</li>
+    <li :class="type === '-' && 'selected'"
+        @click="selectType('-')">支出
+    </li>
+    <li :class="type === '+' && 'selected'"
+        @click="selectType('+')">收入
+    </li>
     <li class="cancel">取消</li>
   </ul>
 </template>
@@ -13,12 +17,17 @@ import {Component, Prop} from 'vue-property-decorator';
 
 type DateSourceItem = {
   value: '-' | '+';
-  text: string;
+  text: '-' | '+';
 }
 @Component
 export default class Tabs extends Vue {
   @Prop() readonly dataSource!: DateSourceItem[];
   @Prop(String) readonly classPrefix?: string;
+  type = '-';
+
+  selectType(value: string) {
+    this.type = value;
+  }
 }
 
 </script>
